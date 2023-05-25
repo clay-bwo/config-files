@@ -87,7 +87,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -188,8 +188,14 @@ bindsym $mod+r mode "resize"
 #bar {
         #status_command i3status
 #}
-gaps inner 10
-gaps outer 10
+gaps inner 20
+gaps outer 20
 default_border pixel 0
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Transparency with picom compositor
+exec_always picom -f
+
+# Shortcut for Lockscreen
+bindsym $mod+x exec /home/$USER/.config/scripts/lock
